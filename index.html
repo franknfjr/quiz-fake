@@ -7,8 +7,29 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Espaço para a landing page -->
-    <div id="landing-page">
+    <div id="landing-page" class="container">
+        <h1>Quiz sobre Conhecimentos Gerais</h1>
+        <p>Teste seus conhecimentos com 2 perguntas!</p>
+        <button id="start-btn" class="btn">Iniciar Quiz</button>
     </div>
+
+    <div id="quiz-container" class="container hidden">
+        <div id="question-container">
+            <h2 id="question"></h2>
+            <div id="options" class="options"></div>
+        </div>
+        <div class="quiz-footer">
+            <span id="question-counter"></span>
+            <button id="next-btn" class="btn hidden">Próxima</button>
+        </div>
+    </div>
+
+    <div id="result-container" class="container hidden">
+        <h2>Resultado Final</h2>
+        <p id="score"></p>
+        <button id="restart-btn" class="btn">Reiniciar Quiz</button>
+    </div>
+
+    <script src="index.js"></script>
 </body>
 </html>
