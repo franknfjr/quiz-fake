@@ -48,6 +48,10 @@ class QuizApp {
     this.scoreElement = document.getElementById('score');
     this.finalScore = document.getElementById('final-score');
     this.scoreMessage = document.getElementById('score-message');
+
+    // Feedback elements
+    this.feedbackOverlay = document.getElementById('feedback-overlay');
+    this.feedbackText = this.feedbackOverlay.querySelector('.feedback-text');
   }
 
   attachEventListeners() {
@@ -71,6 +75,7 @@ class QuizApp {
     this.questionNumber.textContent = this.currentQuestion + 1;
 
     // Reset button states
+    this.resetButtonStyles();
     this.trueBtn.disabled = false;
     this.falseBtn.disabled = false;
     this.trueBtn.style.opacity = '1';
@@ -90,12 +95,15 @@ class QuizApp {
       this.score++;
       this.updateScore();
       this.showAnswerFeedback(true);
+      this.showFeedbackAnimation(true);
     } else {
       this.showAnswerFeedback(false);
+      this.showFeedbackAnimation(false);
     }
 
     // Move to next question after a short delay
     setTimeout(() => {
+      this.hideFeedbackAnimation();
       this.currentQuestion++;
       if (this.currentQuestion < this.questions.length) {
         this.displayQuestion();
@@ -166,13 +174,38 @@ class QuizApp {
     this.resetButtonStyles();
   }
 
+  showFeedbackAnimation(isCorrect) {
+    // Set feedback text and style
+    if (isCorrect) {
+      this.feedbackText.textContent = 'Acertou!!';
+      this.feedbackOverlay.classList.add('correct');
+      this.feedbackOverlay.classList.remove('wrong');
+    } else {
+      this.feedbackText.textContent = 'Errou!!';
+      this.feedbackOverlay.classList.add('wrong');
+      this.feedbackOverlay.classList.remove('correct');
+    }
+
+    // Show overlay
+    this.feedbackOverlay.classList.add('show');
+  }
+
+  hideFeedbackAnimation() {
+    this.feedbackOverlay.classList.remove('show');
+  }
+
   resetButtonStyles() {
-    this.trueBtn.style.background = '';
-    this.trueBtn.style.color = '';
-    this.trueBtn.style.border = '';
-    this.falseBtn.style.background = '';
-    this.falseBtn.style.color = '';
-    this.falseBtn.style.border = '';
+    // Reset styles to original state
+    this.trueBtn.style.cssText = '';
+    this.falseBtn.style.cssText = '';
+
+    // Remove animation classes if any
+    this.trueBtn.classList.remove('correct', 'wrong');
+    this.falseBtn.classList.remove('correct', 'wrong');
+
+    // Reset opacity
+    this.trueBtn.style.opacity = '1';
+    this.falseBtn.style.opacity = '1';
   }
 
   showScreen(screenId) {
