@@ -617,36 +617,36 @@ body::after {
         margin: 10px;
         border-radius: 15px;
     }
-    
+
     .quiz-header {
         padding: 15px 20px;
         flex-direction: column;
         gap: 15px;
     }
-    
+
     .quiz-header h1 {
         font-size: 1.5rem;
     }
-    
+
     .screen {
         padding: 30px 20px;
     }
-    
+
     .question-text {
         font-size: 1.1rem;
         padding: 20px;
     }
-    
+
     .answer-buttons {
         flex-direction: column;
         align-items: center;
     }
-    
+
     .btn {
         width: 100%;
         max-width: 200px;
     }
-    
+
     .final-score {
         flex-direction: column;
         gap: 5px;
