@@ -1,84 +1,91 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Quiz Fake</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
 
-<body>
+  <body>
     <div class="quiz-container">
-        <!-- Header with Score -->
-        <header class="quiz-header">
-            <h1>Quiz Fake</h1>
-            <div class="score-display">
-                <span class="score-label">Pontuação:</span>
-                <span id="score" class="score-value">0</span>
-            </div>
-        </header>
+      <!-- Header with Score -->
+      <header class="quiz-header">
+        <h1>Quiz Fake</h1>
+        <div class="score-display">
+          <span class="score-label">Pontuação:</span>
+          <span id="score" class="score-value">0</span>
+        </div>
+      </header>
 
-        <!-- Quiz Content -->
-        <main class="quiz-main">
-            <!-- Start Screen -->
-            <div id="start-screen" class="screen active">
-                <div class="start-content">
-                    <h2>Bem-vindo ao Quiz!</h2>
-                    <p>Teste seus conhecimentos com 5 perguntas verdadeiro ou falso.</p>
-                    <button id="start-btn" class="btn btn-primary">Começar Quiz</button>
-                </div>
-            </div>
+      <!-- Quiz Content -->
+      <main class="quiz-main">
+        <!-- Start Screen -->
+        <div id="start-screen" class="screen active">
+          <div class="start-content">
+            <h2>Bem-vindo ao Quiz!</h2>
+            <p>Teste seus conhecimentos com 5 perguntas verdadeiro ou falso.</p>
+            <button id="start-btn" class="btn btn-primary">Começar Quiz</button>
+          </div>
+        </div>
 
-            <!-- Question Screen -->
-            <div id="question-screen" class="screen">
-                <div class="question-content">
-                    <div class="question-counter">
-                        <span id="question-number">1</span> de 5
-                    </div>
-                    <div class="question-text" id="question-text">
-                        <!-- Question will be inserted here -->
-                    </div>
-                    <div class="answer-buttons">
-                        <button id="true-btn" class="btn btn-answer btn-true">Verdadeiro</button>
-                        <button id="false-btn" class="btn btn-answer btn-false">Falso</button>
-                    </div>
-                </div>
-
-                <!-- Feedback Animation -->
-                <div id="feedback-overlay" class="feedback-overlay">
-                    <div class="feedback-message">
-                        <span class="feedback-icon"></span>
-                        <span class="feedback-text"></span>
-                    </div>
-                </div>
+        <!-- Question Screen -->
+        <div id="question-screen" class="screen">
+          <div class="question-content">
+            <div class="question-counter">
+              <span id="question-number">1</span> de 5
             </div>
-
-            <!-- Results Screen -->
-            <div id="results-screen" class="screen">
-                <div class="results-content">
-                    <h2>Quiz Concluído!</h2>
-                    <div class="final-score">
-                        <span class="score-label">Sua pontuação:</span>
-                        <span id="final-score" class="score-value">0</span>
-                        <span class="score-total">/ 5</span>
-                    </div>
-                    <div class="score-message" id="score-message">
-                        <!-- Score message will be inserted here -->
-                    </div>
-                    <button id="restart-btn" class="btn btn-primary">Fazer Novamente</button>
-                </div>
+            <div class="question-text" id="question-text">
+              <!-- Question will be inserted here -->
             </div>
-        </main>
+            <div class="answer-buttons">
+              <button id="true-btn" class="btn btn-answer btn-true">
+                Verdadeiro
+              </button>
+              <button id="false-btn" class="btn btn-answer btn-false">
+                Falso
+              </button>
+            </div>
+          </div>
+
+          <!-- Feedback Animation -->
+          <div id="feedback-overlay" class="feedback-overlay">
+            <div class="feedback-message">
+              <span class="feedback-icon"></span>
+              <span class="feedback-text"></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Results Screen -->
+        <div id="results-screen" class="screen">
+          <div class="results-content">
+            <h2>Quiz Concluído!</h2>
+            <div class="final-score">
+              <span class="score-label">Sua pontuação:</span>
+              <span id="final-score" class="score-value">0</span>
+              <span class="score-total">/ 5</span>
+            </div>
+            <div class="score-message" id="score-message">
+              <!-- Score message will be inserted here -->
+            </div>
+            <button id="submit-btn" type="button" class="btn btn-primary">
+              Enviar resposta
+            </button>
+            <button id="restart-btn" class="btn btn-primary">
+              Fazer Novamente
+            </button>
+          </div>
+        </div>
+      </main>
     </div>
     <script src="index.js"></script>
-</body>
+  </body>
 
-<footer class="quiz-footer">
-  <div class="footer-content">
-    <p>&copy; 2025 Quiz Fake. Todos os direitos reservados.</p>
-    <p>Desenvolvido com 💙 e JavaScript Vanilla.</p>
-  </div>
-</footer>
-
+  <footer class="quiz-footer">
+    <div class="footer-content">
+      <p>&copy; 2025 Quiz Fake. Todos os direitos reservados.</p>
+      <p>Desenvolvido com 💙 e JavaScript Vanilla.</p>
+    </div>
+  </footer>
 </html>
